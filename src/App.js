@@ -5,7 +5,7 @@ import { Route,Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Courses from './components/Courses/Courses';
-
+import { createContext } from 'react';
 let courses = [
   {
     id: 1,
@@ -29,11 +29,16 @@ let courses = [
   },
 ];
 
+export const ThemeContext = createContext(null);
 
 function App() {
+
+
   return (
     <div className="App">
-      <Header />
+      <ThemeContext.Provider value="dark">
+        <Header />
+      </ThemeContext.Provider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
