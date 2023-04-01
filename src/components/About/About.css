@@ -2,8 +2,24 @@
 
 .about{
     width: 80%;
-    margin: 0 auto;
-
-
-
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
+
+.about h1{
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+
+.about p{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+

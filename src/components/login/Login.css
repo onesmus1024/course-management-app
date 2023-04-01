@@ -1,0 +1,109 @@
+.form-group{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+    /* display at the center */
+    width: 80%;
+
+    
+
+
+}
+
+.form-group form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.form-group form .input-group{
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem; */
+}
+
+.form-group form .input-group label{
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+
+
+}
+.form-group form .input-group input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+}
+
+.form-group form .input-group input:focus{
+    border: 1px solid #000;
+}
+
+.form-group form .input-group input[type="submit"]{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group form .input-group input[type="submit"]:hover{
+    background-color: #000;
+}
+
+.form-group form .input-group input[type="submit"]:focus{
+    outline: none;
+}
+
+.form-group form .input-group input[type="submit"]:active{
+    background-color: #333;
+}
+
+.form-group form .input-group input[type="submit"]:disabled{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
+}
+
+.form-group form .input-group input[type="submit"]:disabled:hover{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
+}
+
+.form-group form .input-group input[type="submit"]:disabled:focus{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
+}
+
+.form-group form .input-group input[type="submit"]:disabled:active{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
+}
+
+.form-group form .input-group input[type="submit"]:disabled:hover{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
+}
+
