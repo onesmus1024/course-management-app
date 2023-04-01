@@ -31,6 +31,8 @@ const Courses = (props) => {
             })}
             </tbody>
         </table>
+
+        <Link to="/add-course" className="btn">Add Course</Link>
         </div>
     );
     };
