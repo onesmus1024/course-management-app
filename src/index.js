@@ -4,13 +4,34 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import configureStore from "./redux/configureStore";
+import { Provider } from "react-redux";
+
+const initialState = {
+  courses: [
+    {
+      id: 1,
+      title: "Learn React",
+      description: "Learn the fundamentals of React",
+      authorId: 1,
+      authorName: "Scott Allen",
+      category: "JavaScript",
+      length: "2:30",
+      slug: "learn-react",
+    }
+  ]
+};
+
+const store = configureStore(initialState);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

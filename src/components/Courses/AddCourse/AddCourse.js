@@ -1,22 +1,17 @@
 import React from "react";
+import { connect } from "react-redux";
+import bindActionCreator from "react-redux";
+import * as courseActions from "../../../redux/actions/courseActions";
 
-//   {
-//     id: 1,
-//     title: "Learn React",
-//     description: "Learn the fundamentals of React",
-//     authorId: 1,
-//     authorName: "Scott Allen",
-//     category: "JavaScript",
-//     length: "2:30",
-//     slug: "learn-react",
-//   },
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
 
-    const course = {
+const AddCourse = (props) => {
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+
+      const course = {
         id: Math.floor(Math.random() * 1000),
         title: data.title,
         description: data.description,
@@ -25,15 +20,10 @@ const handleSubmit = (e) => {
         category: data.category,
         length: "2:30",
         slug: data.title.toLowerCase().replace(" ", "-"),
+      };
+
+      props.createCourse(course)
     };
-
-
-    console.log(course);
-
-  
-}
-
-const AddCourse = () => {
   return (
     <div className="form-group">
       <form onSubmit={handleSubmit}>
@@ -82,4 +72,20 @@ const AddCourse = () => {
   );
 };
 
-export default AddCourse;
+
+const mapStateToProps = (state) => {
+    return {
+        courses: state.courses,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createCourse: (course) => dispatch(courseActions.createCourse(course)),
+        
+    };
+};
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddCourse);

@@ -9,6 +9,7 @@ import Login from './components/login/Login';
 import Signup from './components/sign-up/SignUp';
 import AddCourse from './components/Courses/AddCourse/AddCourse';
 import { createContext } from 'react';
+
 let courses = [
   {
     id: 1,
@@ -36,6 +37,7 @@ export const ThemeContext = createContext(null);
 export const UserContext = createContext(null);
 
 function App() {
+  
 
 
   return (

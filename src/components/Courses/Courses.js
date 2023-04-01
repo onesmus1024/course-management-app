@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Courses.css";
 
-const Courses = ({ courses }) => {
+const Courses = (props) => {
     return (
         <div className="courses">
         <h2>Courses</h2>
@@ -16,7 +17,7 @@ const Courses = ({ courses }) => {
             </tr>
             </thead>
             <tbody>
-            {courses.map((course) => {
+            {props.courses.map((course) => {
                 return (
                 <tr key={course.id}>
                     <td>
@@ -34,4 +35,12 @@ const Courses = ({ courses }) => {
     );
     };
 
-export default Courses;
+const mapStateToProps = (state) => {
+
+    return {
+        courses: state.courses,
+    };
+
+};
+
+export default connect(mapStateToProps)(Courses);
