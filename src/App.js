@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Courses from './components/Courses/Courses';
 import Login from './components/login/Login';
 import Signup from './components/sign-up/SignUp';
+import AddCourse from './components/Courses/AddCourse/AddCourse';
 import { createContext } from 'react';
 let courses = [
   {
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <ThemeContext.Provider value="dark" >
+      <ThemeContext.Provider value="light" >
         <UserContext.Provider value="false">
           <Header />
         </UserContext.Provider>
@@ -50,6 +51,7 @@ function App() {
         <Route path="/courses" element={<Courses courses={courses} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/add-course" element={<AddCourse />} />
       </Routes>
     </div>
   );
